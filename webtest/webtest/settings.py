@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'weba',
+    'webb',
+    'webc',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +57,7 @@ ROOT_URLCONF = 'webtest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/anuchit/Demo/python/djanog-multi-app/webtest/weba/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,9 +66,14 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'debug': DEBUG
         },
     },
 ]
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.app_directories.load_template_source',
+)
 
 WSGI_APPLICATION = 'webtest.wsgi.application'
 
